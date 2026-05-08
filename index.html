@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  
+  <meta charset="UTF-8">
+  <title>Lade Video...</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    .loader {
+      border: 6px solid #333;
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .text {
+      font-size: 18px;
+      opacity: 0.8;
+    }
+  </style>
 </head>
+
 <body>
-  <iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
+
+  <div class="loader"></div>
+  <div class="text">Video wird geladen...</div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }, 2500);
+  </script>
+
 </body>
 </html>
